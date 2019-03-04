@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="id.eudeka.osg3_klub_bola.view.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
 
+        <variable
+            name="vm"
+            type="id.eudeka.osg3_klub_bola.viewmodel.TeamViewModel" />
+    </data>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerTeamBola"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/item_row"
-        >
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="id.eudeka.osg3_klub_bola.view.MainActivity">
 
-    </android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerTeamBola"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_row">
 
-</LinearLayout>
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+</layout>

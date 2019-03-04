@@ -1,25 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="12dp"
-    android:gravity="center|left"
-    android:orientation="horizontal">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/item_club_img"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:src="@mipmap/ic_launcher" />
+    <data>
 
-    <TextView
-        android:id="@+id/txt_item_club_name"
-        android:layout_width="wrap_content"
+        <variable
+            name="teamDetailVM"
+            type="id.eudeka.osg3_klub_bola.model.TeamDetail" />
+    </data>
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:textSize="18sp"
-        tools:text="Persib" />
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
 
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardElevation="4dp">
 
-</LinearLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/item_club_img"
+                    android:layout_width="90dp"
+                    android:layout_margin="10dp"
+                    android:layout_height="90dp"
+                    bind:teamLogo="@{teamDetailVM.teamLogo}" />
+
+                <TextView
+                    android:id="@+id/txt_item_club_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/item_club_img"
+                    android:text="@{teamDetailVM.teamName}"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+</layout>
